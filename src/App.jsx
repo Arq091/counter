@@ -1,7 +1,7 @@
 import supabase from "./client";
 import sound from "./sound/click sound.mp3";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, memo } from "react";
 
 import "./styles/button.css";
 
@@ -15,7 +15,6 @@ function App() {
 
   //checks if localcount exists
   if ("localCount" in localStorage) {
-    console.log("ur mom");
     plusnum = 1;
   } else {
     localStorage.setItem("localCount", lcount);
@@ -95,8 +94,8 @@ function App() {
       </p>
 
       <p className="bg-red-50 p-1 text-red-600 border border-red-600 max-w-sm text-center m-4">
-        <span className="font-semibold inline mr-2 ">Note:</span>May take 1 - 2
-        seconds for changes to register to database.
+        <span className="font-semibold inline mr-2 ">Warning:</span>May take 2 -
+        3 seconds for changes to register to database.
       </p>
     </div>
   );
